@@ -1,0 +1,3 @@
+puts "Hello from Devise Suspicious Activity Gem"
+
+# Only put require statements in here....
