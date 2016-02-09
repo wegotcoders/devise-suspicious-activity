@@ -10,9 +10,9 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
-  s.authors = ["Dan Garland"]
+  s.authors = ["Dan Garland", "Simon Knight"]
   s.date = "2016-02-09"
-  s.description = "TODO: longer description of your gem"
+  s.description = "Notifies old email of change to email and password."
   s.email = "dan@dangarland.co.uk"
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -22,18 +22,20 @@ Gem::Specification.new do |s|
     ".document",
     ".rspec",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "devise-suspicious-activity.gemspec",
     "lib/devise-suspicious-activity.rb",
     "spec/devise-suspicious-activity_spec.rb",
     "spec/spec_helper.rb"
   ]
   s.homepage = "http://github.com/dmgarland/devise-suspicious-activity"
   s.licenses = ["MIT"]
-  s.rubygems_version = "2.4.6"
-  s.summary = "TODO: one-line summary of your gem"
+  s.rubygems_version = "2.4.5"
+  s.summary = "Devise extension that notifies users of suspicious activity."
 
   if s.respond_to? :specification_version then
     s.specification_version = 4

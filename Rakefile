@@ -17,10 +17,10 @@ Jeweler::Tasks.new do |gem|
   gem.name = "devise-suspicious-activity"
   gem.homepage = "http://github.com/dmgarland/devise-suspicious-activity"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Devise extension that notifies users of suspicious activity.}
+  gem.description = %Q{Notifies old email of change to email and password.}
   gem.email = "dan@dangarland.co.uk"
-  gem.authors = ["Dan Garland"]
+  gem.authors = ["Dan Garland", "Simon Knight"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
