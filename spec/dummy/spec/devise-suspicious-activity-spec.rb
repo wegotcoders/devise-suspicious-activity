@@ -5,13 +5,17 @@ require 'rails_helper'
 
 describe "DeviseSuspiciousActivity" do
   before do
-    @user = User.create(email: 'user@gmail.com', password: 'password')
+    @original_email = 'user@gmail.com'
+    @user = User.create(email: @original_email, password: 'password')
     @user.email = 'changed@gmail.com'
     @user.save!
   end
 
-  it "sends two emails" do
-    expect(ActionMailer::Base.deliveries.count).to eq 2
+  it "sends one email" do
+    mail = ActionMailer::Base.deliveries.last
+    expect(ActionMailer::Base.deliveries.count).to eq 1
+    expect(mail.body.raw_source).to include('We wanted to let you know that your email was changed')
+    expect(mail.to.first).to eq(@original_email)
     # Test email body and email sent address
   end
 
