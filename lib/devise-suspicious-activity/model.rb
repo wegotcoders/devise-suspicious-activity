@@ -8,7 +8,7 @@ module Devise
       end
 
       def notify_old_email
-        SuspiciousMailer.email_changed(self).deliver_now
+        SuspiciousMailer.send_email_change_notification(self).deliver_now
       end
     end
   end
