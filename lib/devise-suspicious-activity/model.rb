@@ -3,12 +3,12 @@ module Devise
     module Suspiciousable
       extend ActiveSupport::Concern
 
-      include do
-        after_save :notify_old_email
+      included do
+        before_update :notify_old_email
       end
 
       def notify_old_email
-
+        SuspiciousMailer.email_changed(id).deliver_now
       end
     end
   end
