@@ -1,3 +1,5 @@
 puts "Hello from Devise Suspicious Activity Gem"
 
-# Only put require statements in here....
+require 'devise'
+
+Devise.add_module :suspiciousable, :model => 'devise-suspicious-activity/model'

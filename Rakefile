@@ -20,7 +20,7 @@ Jeweler::Tasks.new do |gem|
   gem.summary = %Q{Devise extension that notifies users of suspicious activity.}
   gem.description = %Q{Notifies old email of change to email and password.}
   gem.email = "dan@dangarland.co.uk"
-  gem.authors = ["Dan Garland", "Simon Knight"]
+  gem.authors = ["Dan Garland", "Simon Knight", "Alex Malik", "Joe Dickinson"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
