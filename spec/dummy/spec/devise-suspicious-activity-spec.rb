@@ -4,16 +4,16 @@ require 'devise'
 require 'rails_helper'
 
 describe "DeviseSuspiciousActivity" do
-  before do
-    @original_email = 'user@gmail.com'
 
-    @user = User.create(email: @original_email, password: 'password')
-    @user.email = 'changed@gmail.com'
-    @user.save!
-    
+  let(:original_email) { 'user@gmail.com' }
+  let(:user) { User.create(email: original_email, password: 'password') }
+
+  before do
+    user.email = 'changed@gmail.com'
+    user.save!
     @mail = ActionMailer::Base.deliveries.last
   end
-
+  
   it "sends one email" do
     expect(ActionMailer::Base.deliveries.count).to eq 1
   end
@@ -23,6 +23,6 @@ describe "DeviseSuspiciousActivity" do
   end
 
   it "sends the correct email to the correct address" do
-    expect(@mail.to.first).to eq(@original_email)
+    expect(@mail.to.first).to eq(original_email)
   end
 end
