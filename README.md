@@ -10,20 +10,25 @@ It is composed of an additional Devise module:
 
 Devise Security Extension works with Devise on Rails 4.0 onwards. You can add it to your Gemfile after you successfully set up Devise (see [Devise documentation](https://github.com/plataformatec/devise)) with:
 
-`gem 'devise-suspicious-activity'`
+```ruby
+gem 'devise-suspicious-activity'
+```
 
 Run the bundle command to install it.
 
 Add the `:suspiciousable` module to your devise model:
-
-    class User < ActiveRecord::Base
-      devise :database_authenticatable, :registerable,
-       :recoverable, :rememberable, :trackable, :validatable, **:suspiciousable**
-    end
+```ruby
+class User < ActiveRecord::Base
+  devise :database_authenticatable, :registerable,
+   :recoverable, :rememberable, :trackable, :validatable, :suspiciousable
+end
+```
 
 After you installed Devise Suspicious Activity if you want to edit the email template you can run the generator:
 
-`rails generate suspiciousable`
+```ruby
+rails generate suspiciousable
+```
 
 ## Contributors
 
