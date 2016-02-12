@@ -4,7 +4,7 @@ module Devise
       extend ActiveSupport::Concern
 
       included do
-        before_update :notify_old_email
+        before_update :notify_old_email, :if => Proc.new { |r| r.email_changed? }
       end
 
       def notify_old_email
