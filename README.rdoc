@@ -16,10 +16,10 @@ Run the bundle command to install it.
 
 Add the `:suspiciousable` module to your devise model:
 
-```class User < ActiveRecord::Base
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, **:suspiciousable**
-end```
+    class User < ActiveRecord::Base
+      devise :database_authenticatable, :registerable,
+       :recoverable, :rememberable, :trackable, :validatable, **:suspiciousable**
+    end
 
 After you installed Devise Suspicious Activity if you want to edit the email template you can run the generator:
 
