@@ -40,7 +40,4 @@ describe "DeviseSuspiciousActivity" do
       expect(ActionMailer::Base.deliveries.count).to eq 0
     end
   end
-
-  # Generator for the email template
-
 end
