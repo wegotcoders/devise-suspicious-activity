@@ -1,6 +1,35 @@
-= devise-suspicious-activity
+= Devise Suspicious Activity
 
-Description goes here.
+A security extension for Devise that notifies users' old email address when their email has been changed.
+
+It is composed of an additional Devise module:
+
+* `:suspiciousable` - Notify old email address when an email is changed.
+
+== Getting started
+
+Devise Security Extension works with Devise on Rails 4.0 onwards. You can add it to your Gemfile after you successfully set up Devise (see [Devise documentation](https://github.com/plataformatec/devise)) with:
+
+`gem 'devise-suspicious-activity'`
+
+Run the bundle command to install it.
+
+Add the `:suspiciousable` module to your devise model:
+
+```class User < ActiveRecord::Base
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable, **:suspiciousable**
+end```
+
+After you installed Devise Suspicious Activity if you want to edit the email template you can run the generator:
+
+'rails generate suspiciousable'
+
+== Contributors
+
+* Simon Knight (https://github.com/SimonDKnight [https://github.com/SimonDKnight])
+* Alex Malik (https://github.com/alexmalik [https://github.com/alexmalik])
+* Joe Dickinson (https://github.com/Joe-Dickinson [https://github.com/Joe-Dickinson])
 
 == Contributing to devise-suspicious-activity
  
