@@ -2,6 +2,7 @@
 
 require 'rubygems'
 require 'bundler'
+
 begin
   Bundler.setup(:default, :development)
 rescue Bundler::BundlerError => e
@@ -18,10 +19,11 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/dmgarland/devise-suspicious-activity"
   gem.license = "MIT"
   gem.summary = %Q{Devise extension that notifies users of suspicious activity.}
-  gem.description = %Q{Notifies old email of change to email and password.}
+  gem.description = %Q{Notifies old email of change to email.}
   gem.email = "dan@dangarland.co.uk"
   gem.authors = ["Dan Garland", "Simon Knight", "Alex Malik", "Joe Dickinson"]
-  # dependencies defined in Gemfile
+  gem.files.reject! { |path| path[0..4] == "spec/" }
+
 end
 Jeweler::RubygemsDotOrgTasks.new
 
