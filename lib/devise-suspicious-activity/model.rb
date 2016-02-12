@@ -7,6 +7,7 @@ module Devise
         before_update :notify_old_email, :if => Proc.new { |r| r.email_changed? }
       end
 
+      private
       def notify_old_email
         SuspiciousMailer.send_email_change_notification(self).deliver_now
       end
