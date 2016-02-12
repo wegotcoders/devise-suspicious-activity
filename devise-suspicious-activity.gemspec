@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
-  s.authors = ["Dan Garland", "Simon Knight"]
-  s.date = "2016-02-09"
+  s.authors = ["Dan Garland", "Simon Knight", "Alex Malik", "Joe Dickinson"]
+  s.date = "2016-02-12"
   s.description = "Notifies old email of change to email and password."
   s.email = "dan@dangarland.co.uk"
   s.extra_rdoc_files = [
@@ -27,10 +27,71 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "app/mailers/suspicious_mailer.rb",
+    "app/views/suspicious_mailer/send_email_change_notification.html.erb",
     "devise-suspicious-activity.gemspec",
     "lib/devise-suspicious-activity.rb",
-    "spec/devise-suspicious-activity_spec.rb",
-    "spec/spec_helper.rb"
+    "lib/devise-suspicious-activity/model.rb",
+    "spec/dummy/.gitignore",
+    "spec/dummy/.rspec",
+    "spec/dummy/Gemfile",
+    "spec/dummy/Gemfile.lock",
+    "spec/dummy/README.rdoc",
+    "spec/dummy/Rakefile",
+    "spec/dummy/app/assets/images/.keep",
+    "spec/dummy/app/assets/javascripts/application.js",
+    "spec/dummy/app/assets/stylesheets/application.css",
+    "spec/dummy/app/controllers/application_controller.rb",
+    "spec/dummy/app/controllers/concerns/.keep",
+    "spec/dummy/app/helpers/application_helper.rb",
+    "spec/dummy/app/mailers/.keep",
+    "spec/dummy/app/models/.keep",
+    "spec/dummy/app/models/concerns/.keep",
+    "spec/dummy/app/models/user.rb",
+    "spec/dummy/app/views/layouts/application.html.erb",
+    "spec/dummy/bin/bundle",
+    "spec/dummy/bin/rails",
+    "spec/dummy/bin/rake",
+    "spec/dummy/bin/setup",
+    "spec/dummy/bin/spring",
+    "spec/dummy/config.ru",
+    "spec/dummy/config/application.rb",
+    "spec/dummy/config/boot.rb",
+    "spec/dummy/config/database.yml",
+    "spec/dummy/config/environment.rb",
+    "spec/dummy/config/environments/development.rb",
+    "spec/dummy/config/environments/production.rb",
+    "spec/dummy/config/environments/test.rb",
+    "spec/dummy/config/initializers/assets.rb",
+    "spec/dummy/config/initializers/backtrace_silencers.rb",
+    "spec/dummy/config/initializers/cookies_serializer.rb",
+    "spec/dummy/config/initializers/devise.rb",
+    "spec/dummy/config/initializers/filter_parameter_logging.rb",
+    "spec/dummy/config/initializers/inflections.rb",
+    "spec/dummy/config/initializers/mime_types.rb",
+    "spec/dummy/config/initializers/session_store.rb",
+    "spec/dummy/config/initializers/wrap_parameters.rb",
+    "spec/dummy/config/locales/devise.en.yml",
+    "spec/dummy/config/locales/en.yml",
+    "spec/dummy/config/routes.rb",
+    "spec/dummy/config/secrets.yml",
+    "spec/dummy/db/migrate/20160211111531_devise_create_users.rb",
+    "spec/dummy/db/schema.rb",
+    "spec/dummy/db/seeds.rb",
+    "spec/dummy/lib/assets/.keep",
+    "spec/dummy/lib/tasks/.keep",
+    "spec/dummy/log/.keep",
+    "spec/dummy/public/404.html",
+    "spec/dummy/public/422.html",
+    "spec/dummy/public/500.html",
+    "spec/dummy/public/favicon.ico",
+    "spec/dummy/public/robots.txt",
+    "spec/dummy/spec/devise-suspicious-activity-spec.rb",
+    "spec/dummy/spec/models/user_spec.rb",
+    "spec/dummy/spec/rails_helper.rb",
+    "spec/dummy/spec/spec_helper.rb",
+    "spec/dummy/vendor/assets/javascripts/.keep",
+    "spec/dummy/vendor/assets/stylesheets/.keep"
   ]
   s.homepage = "http://github.com/dmgarland/devise-suspicious-activity"
   s.licenses = ["MIT"]
@@ -42,26 +103,26 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<devise>, [">= 0"])
-      s.add_development_dependency(%q<rspec>, ["~> 2.8.0"])
       s.add_development_dependency(%q<rdoc>, ["~> 3.12"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 2.0.1"])
       s.add_development_dependency(%q<simplecov>, [">= 0"])
+      s.add_development_dependency(%q<rspec-core>, [">= 0"])
     else
       s.add_dependency(%q<devise>, [">= 0"])
-      s.add_dependency(%q<rspec>, ["~> 2.8.0"])
       s.add_dependency(%q<rdoc>, ["~> 3.12"])
       s.add_dependency(%q<bundler>, ["~> 1.0"])
       s.add_dependency(%q<jeweler>, ["~> 2.0.1"])
       s.add_dependency(%q<simplecov>, [">= 0"])
+      s.add_dependency(%q<rspec-core>, [">= 0"])
     end
   else
     s.add_dependency(%q<devise>, [">= 0"])
-    s.add_dependency(%q<rspec>, ["~> 2.8.0"])
     s.add_dependency(%q<rdoc>, ["~> 3.12"])
     s.add_dependency(%q<bundler>, ["~> 1.0"])
     s.add_dependency(%q<jeweler>, ["~> 2.0.1"])
     s.add_dependency(%q<simplecov>, [">= 0"])
+    s.add_dependency(%q<rspec-core>, [">= 0"])
   end
 end
 
