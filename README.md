@@ -30,6 +30,7 @@ After you installed Devise Suspicious Activity if you want to edit the email tem
 * Simon Knight (https://github.com/SimonDKnight [https://github.com/SimonDKnight])
 * Alex Malik (https://github.com/alexmalik [https://github.com/alexmalik])
 * Joe Dickinson (https://github.com/Joe-Dickinson [https://github.com/Joe-Dickinson])
+* Dan Garland (https://github.com/dmgarland [https://github.com/dmgarland])
 
 ## Contributing to devise-suspicious-activity
  
