@@ -1,6 +1,6 @@
 = Devise Suspicious Activity
 
-A security extension for Devise that notifies users' old email address when their email has been changed.
+A security extension for Devise that notifies users old email address when their email has been changed.
 
 It is composed of an additional Devise module:
 
@@ -23,7 +23,7 @@ Add the `:suspiciousable` module to your devise model:
 
 After you installed Devise Suspicious Activity if you want to edit the email template you can run the generator:
 
-'rails generate suspiciousable'
+`rails generate suspiciousable`
 
 == Contributors
 
