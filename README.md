@@ -1,6 +1,6 @@
 = Devise Suspicious Activity
 
-A security extension for Devise that notifies users old email address when their email has been changed.
+A security extension for Devise that notifies users' old email address when their email has been changed.
 
 It is composed of an additional Devise module:
 
