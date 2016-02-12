@@ -22,7 +22,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{Notifies old email of change to email.}
   gem.email = "dan@dangarland.co.uk"
   gem.authors = ["Dan Garland", "Simon Knight", "Alex Malik", "Joe Dickinson"]
-  gem.files.reject! { |path| path[0..4] == "spec/" }
+  gem.files.reject! { |path| path.start_with?("spec/") }
 
 end
 Jeweler::RubygemsDotOrgTasks.new
